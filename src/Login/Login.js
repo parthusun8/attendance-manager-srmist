@@ -10,10 +10,6 @@ const baseURL = "https://academia-api.azurewebsites.net/";
 
 function Attendance(token) {
   const headers = {
-    Accept: "*/*",
-    Connection: "keep-alive",
-    "Content-Length": 2,
-    "Content-Type": "application/json",
     "x-access-token": token,
   };
 
@@ -22,7 +18,7 @@ function Attendance(token) {
     axios
       .post(baseURL + "course-user", {
         'x-access-token' : token
-      }, headers)
+      }, {headers: headers})
       .then((response) => {
         // console.log("Logged In", response.data);
         const a = response.data;

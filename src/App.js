@@ -48,6 +48,7 @@ function App() {
 
       {loginbool ? (
         <div className="card--container">
+          <h1 className="heads">Attendance</h1>
           {course_html()}
         </div>
       ) : (

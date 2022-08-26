@@ -8,7 +8,7 @@
 body{
   margin: 0;
   padding: 0;
-  background: linear-gradient(12deg,#121313, #353535);
+  background: linear-gradient(70deg,#121313, #353535);
   /* height: 100%; */
   width: 100%;
   /* overflow: hidden; */
@@ -19,4 +19,7 @@ body{
   /* color: white; */
   align-items: center;
   justify-content: center;
+}
+.heads{
+  color: white;
 }

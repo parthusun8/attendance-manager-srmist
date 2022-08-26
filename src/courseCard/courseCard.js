@@ -21,8 +21,8 @@ function CourseCard({ course_info }) {
   return (
     <div className="course--card">
       <div className="course--details">
-        <span>{course_info.subject_code}</span>
         <span>{course_info.subject_name}</span>
+        <span className="small">{course_info.subject_code}</span>
         <div className="small-dets--margin">
         {calculation() > 0 ? <span className="positive">Margin</span> : <span className="negative">Required</span>}
         <span className="mg-4">{calculation() > 0 ? Math.floor(calculation()) : -1*Math.floor(calculation())}</span>

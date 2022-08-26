@@ -17,7 +17,7 @@ function Login({setter}) {
     const headers = {
       "x-access-token": token,
     };
-    console.log(headers);
+    // console.log(headers);
     axios
       .post(baseURL + "course-user", {
         'x-access-token' : token
@@ -32,12 +32,12 @@ function Login({setter}) {
         setter(a.courses, a.internal_marks, a['time-table'], a.user, true);
       })
       .catch((e) => {
-        console.log(e.response.data);
+        // console.log(e.response.data);
       });
   }
   
   async function send() {
-    console.log(email, password);
+    // console.log(email, password);
     if (email.length < 6) {
       alert("Wrong NetId");
     } else {
@@ -58,11 +58,13 @@ function Login({setter}) {
               get_attendance_details(a.token);
             }
           } catch (e) {
-            console.log(e);
+            // console.log(e);
+            alert(e);
           }
         })
         .catch((e) => {
-          console.log(e.response.data);
+          // console.log(e.response.data);
+          alert(e);
         });
     }
   }
@@ -84,7 +86,7 @@ function Login({setter}) {
                   className="input"
                   onChange={(e) => {
                     setEmail(e.target.value);
-                    console.log(email);
+                    // console.log(email);
                   }}
                 />
                 <span></span>
@@ -97,7 +99,7 @@ function Login({setter}) {
                   className="input"
                   onChange={(e) => {
                     setPassword(e.target.value);
-                    console.log(password);
+                    // console.log(password);
                   }}
                 />
                 <span></span>

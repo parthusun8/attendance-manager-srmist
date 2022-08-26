@@ -37,10 +37,10 @@ function App() {
     setTimeTable(tt);
     setuser(user);
     setlogin(login);
-    console.table(course);
-    console.table(marks);
-    console.table(tt);
-    console.table(user);
+    // console.table(course);
+    // console.table(marks);
+    // console.table(tt);
+    // console.table(user);
   }
 
   return (

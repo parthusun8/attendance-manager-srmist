@@ -29,8 +29,6 @@ You may also see any lint errors in the console.
 
 # Login Using NetId or SRM Email Id and Password
 ![image](https://user-images.githubusercontent.com/77690791/186880242-3d6b038c-d89f-4e4c-af2a-4859dd47aba0.png)
-![1](readme-assets/1.jpeg)
-![0](readme-assets/1.jpeg)
 
 
 

@@ -1,0 +1,13 @@
+.course--card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.course--details{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: .5em;
+    /* margin: 10px auto; */
+    margin-left: 20px;
+}

@@ -4,42 +4,38 @@ import axios from "axios";
 
 const baseURL = "https://academia-api.azurewebsites.net/";
 
-// function Card(){
 
-// }
+function Login({setter}) {
 
-function Attendance(token) {
-  const headers = {
-    "x-access-token": token,
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [token, setToken] = useState("");
 
-  async function get_attendance_details() {
+  
+
+  async function get_attendance_details(token) {
+    const headers = {
+      "x-access-token": token,
+    };
     console.log(headers);
     axios
       .post(baseURL + "course-user", {
         'x-access-token' : token
       }, {headers: headers})
       .then((response) => {
-        // console.log("Logged In", response.data);
         const a = response.data;
-        console.log(a);
+        // courseSetter(a.courses);
+        // MarksSetter(a.internal_marks);
+        // ttsetter(a['time-table']);
+        // userSetter(a.user);
+
+        setter(a.courses, a.internal_marks, a['time-table'], a.user, true);
       })
       .catch((e) => {
         console.log(e.response.data);
       });
   }
-
-  get_attendance_details();
-
-  return <div>Hey</div>;
-}
-
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [login, setlogin] = useState(false);
-  const [token, setToken] = useState("");
-
+  
   async function send() {
     console.log(email, password);
     if (email.length < 6) {
@@ -58,8 +54,8 @@ function Login() {
             if (a.message) {
               alert(a.message);
             } else if (a.token) {
-              setlogin(true);
               setToken(a.token);
+              get_attendance_details(a.token);
             }
           } catch (e) {
             console.log(e);
@@ -73,9 +69,6 @@ function Login() {
 
   return (
     <div className="container">
-      {login ? (
-        Attendance(token)
-      ) : (
         <div className="login--card--container">
           <div className="center">
             <h1>Login</h1>
@@ -120,7 +113,6 @@ function Login() {
             </form>
           </div>
         </div>
-      )}
     </div>
   );
 }

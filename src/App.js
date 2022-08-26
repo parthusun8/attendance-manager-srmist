@@ -49,9 +49,16 @@ function App() {
 
       {loginbool ? (
         <div className="card--container">
-          <h1 className="heads">Attendance</h1>
+          <h1 className="heads">Attendence</h1>
+          <hr></hr>
+          <h1 className="heads">Theory</h1>
           {course_html(courses.filter((course)=>{
             return course.category == "Theory"
+          }))}
+          <hr></hr>
+          <h1 className="heads">Practical</h1>
+          {course_html(courses.filter((course)=>{
+            return course.category == "Practical"
           }))}
         </div>
       ) : (

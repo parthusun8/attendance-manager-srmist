@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background: linear-gradient(194deg,#9439cc, #342847);
+    margin: 20px 10px;
+    padding: 10px;
+    width: 60%;
 }
 .course--details{
     display: flex;
@@ -12,6 +16,7 @@
     margin-left: 20px;
 }
 
+
 .attendance--details{
     display: flex;
     flex-direction: row;
@@ -20,6 +25,37 @@
 .small-dets{
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    margin: 5px 5px;
+    padding-top: 12px;
+    padding-right: 2em;
+    padding-bottom: 12px;
+    align-items: center;
+    /* margin: 5px 5px; */
+}
+
+.small-dets--margin{
+    display: flex;
+    flex-direction: row;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+}
+
+.absent{
+    color: red;
+}
+
+.present{
+    color: greenyellow;
+}
+
+.mg-4{
+    margin-left: 8px;
+}
+
+.positive{
+    color: greenyellow;
+}
+
+.negative{
+    color: orangered;
 }

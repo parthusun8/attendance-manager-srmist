@@ -16,8 +16,9 @@ function App() {
   //     a.appendChild(<CourseCard course_info={courses[i]}/>)
   //   }
   // });
-  function course_html(){
-    const a = courses.map((course, i)=>{
+  function course_html(filtered_courses){
+
+    const a = filtered_courses.map((course, i)=>{
         return <CourseCard key={i} course_info={course} />
       });
       return a;
@@ -49,7 +50,9 @@ function App() {
       {loginbool ? (
         <div className="card--container">
           <h1 className="heads">Attendance</h1>
-          {course_html()}
+          {course_html(courses.filter((course)=>{
+            return course.category == "Theory"
+          }))}
         </div>
       ) : (
         <Login
